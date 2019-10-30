@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: configcilent
+
+  datasource:
+               type: org.springframework.jdbc.datasource.DriverManagerDataSource
+               url: jdbc:mysql:///student?serverTimezone=UTC
+               username: root
+               password: root
+  profiles:
+    active: dey
+  cloud:
+    config:
+       uri: http://localhost:8762  #本地Config Server的访问路径
+       fail-fast: true    #设置客户端优先判断Config Server 是否正常
+#通过Spring.application.name 结合spring.profiles.active拼接目标配置文件名，
+#configclient-dev.yml,去Config Server中查找该文件。

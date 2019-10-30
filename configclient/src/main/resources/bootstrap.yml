@@ -1,0 +1,18 @@
+spring:
+  datasource:
+             type: org.springframework.jdbc.datasource.DriverManagerDataSource
+             url: jdbc:mysql:///student?serverTimezone=UTC
+             username: root
+             password: root
+  cloud:
+    config:
+      name: configclient  #当前服务注册在Eureka Server上的名称，与远程仓库配置文件名对应
+      label: master      #当前Git Repository的分支
+      discovery:
+        enabled: true  #是否开启Config服务发现支持
+        service-id: configserver  #配置中心在Eureka Server上注册的名称
+eureka:
+  client:
+    service-url:
+       defaultZone: http://localhost:8761/eureka/
+

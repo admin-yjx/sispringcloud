@@ -1,0 +1,24 @@
+server:
+  port: 8888
+spring:
+  datasource:
+           type: org.springframework.jdbc.datasource.DriverManagerDataSource
+           url: jdbc:mysql:///student?serverTimezone=UTC
+           username: root
+           password: root
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+         git:
+           uri: https://github.com/admin-yjx/sispringcloud.git
+           searchPaths: config
+           username: admin-yjx
+           password: 19990116.yjx
+      label: master
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+

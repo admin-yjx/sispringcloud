@@ -1,0 +1,6 @@
+spring:
+      datasource:
+           type: org.springframework.jdbc.datasource.DriverManagerDataSource
+           url: jdbc:mysql:///student?serverTimezone=UTC
+           username: root
+           password: root

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sang.mapper.StudentMapper">
+   <select id="Students" resultType="org.sang.pojo.Student">
+       select * from `studentinfo`
+   </select>
+    <insert id="Add">
+        INSERT INTO `studentinfo`(`sname`,`sgender`,`sage`,`saddress`,`semail`)
+        VALUES (#{sname},#{sgender},#{sage},#{saddress},#{semail})
+    </insert>
+    <update id="Update">
+        UPDATE `studentinfo` SET `sname`=#{sname},`sgender`=#{sgender},
+        `sage`=#{sage},`saddress`=#{saddress},`semail`=#{semail}
+        WHERE `sid`=#{sid}
+    </update>
+    <delete id="Delete">
+        DELETE FROM `studentinfo`
+        WHERE `sid`=#{sid}
+    </delete>
+</mapper>
+    
